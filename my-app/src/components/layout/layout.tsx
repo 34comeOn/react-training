@@ -18,7 +18,7 @@ export default function Layout() {
                 Main
             </Link>
             <Link to="/signup" title="/signup">
-                Register
+                Registration
             </Link>
             <Link to="/login" title="/login">
                 Sign in
@@ -28,7 +28,7 @@ export default function Layout() {
             </a>
         </nav>
       </header>
-      <main>
+      <main style={{ paddingLeft: 30}} >
         <Outlet />
       </main>
     </>
