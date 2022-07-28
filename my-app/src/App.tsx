@@ -6,9 +6,11 @@ import History from "./components/history/history";
 import Selected from "./components/selected/selected";
 import Registration from "./components/registration/registration";
 import SignIn from "./components/sign-in/sign-in";
+import Search from "./components/search/search";
 import NotFound from "./components/not-found/not-found";
 
-function App() {
+function App(): JSX.Element {
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -17,6 +19,7 @@ function App() {
         <Route path="/selected" element={<Selected />} />
         <Route path="/signup" element={<Registration />} />
         <Route path="/login" element={<SignIn />} />
+        <Route path="/search" element={<Search />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
