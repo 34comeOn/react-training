@@ -1,9 +1,11 @@
 import { useAppSelector } from "../../hooks/hooks"; 
 
+
 export default function Search (): JSX.Element {
     const yearSearch = useAppSelector(state => state.search.search.year);
     const categorySearch = useAppSelector(state => state.search.search.category);
 
+    
     const {cards, isLoading, error} = useAppSelector(state => state.cards)
 
     return (

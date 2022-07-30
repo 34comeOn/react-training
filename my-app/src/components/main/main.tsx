@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ActionType } from "../../types/action";
 import { useAppDispatch } from "../../hooks/hooks";
 import { fetchCards } from "../../store/reducers/actionCreators";
+import { incrementAsync } from "../../store/reducers/cardsSlice";
 
 export default function Main (): JSX.Element {
     const [currentYear, setYear] = useState('2019');
@@ -13,7 +14,7 @@ export default function Main (): JSX.Element {
 
     const setGlobalSearchState = () => {
         dispatch({type: ActionType.SearchStats, payload: {year: currentYear, category: currentCategory}})
-        dispatch(fetchCards)
+        dispatch(incrementAsync(currentYear))
     }
 
     return (
