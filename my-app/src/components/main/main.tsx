@@ -3,18 +3,17 @@ import { useState } from "react";
 
 import { ActionType } from "../../types/action";
 import { useAppDispatch } from "../../hooks/hooks";
-import { fetchCards } from "../../store/reducers/actionCreators";
-import { incrementAsync } from "../../store/reducers/cardsSlice";
+import { getDataAsync } from "../../utils/dataAPI";
 
 export default function Main (): JSX.Element {
     const [currentYear, setYear] = useState('2019');
-    const [currentCategory, setCategory] = useState();
-
+    const [currentCategory, setCategory] = useState('race');
+   
     const dispatch = useAppDispatch();
-
+    let searchPayload = {year: currentYear, category: currentCategory}
     const setGlobalSearchState = () => {
         dispatch({type: ActionType.SearchStats, payload: {year: currentYear, category: currentCategory}})
-        dispatch(incrementAsync(currentYear))
+        dispatch(getDataAsync(searchPayload));
     }
 
     return (
