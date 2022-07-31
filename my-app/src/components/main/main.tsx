@@ -1,15 +1,20 @@
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { useState } from "react";
+
+import { ActionType } from "../../types/action";
+import { useAppDispatch } from "../../hooks/hooks";
+import { fetchCards } from "../../store/reducers/actionCreators";
+import { incrementAsync } from "../../store/reducers/cardsSlice";
 
 export default function Main (): JSX.Element {
     const [currentYear, setYear] = useState('2019');
     const [currentCategory, setCategory] = useState();
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const setGlobalSearchState = () => {
-        dispatch({type: 'history/searchStats', payload: {year: currentYear, category: currentCategory}})
+        dispatch({type: ActionType.SearchStats, payload: {year: currentYear, category: currentCategory}})
+        dispatch(incrementAsync(currentYear))
     }
 
     return (
@@ -25,7 +30,7 @@ export default function Main (): JSX.Element {
                     <option value="2015">2015</option>
                 </select>
                 <p>Choose category:</p>
-                <div onClick={(event) => setCategory(event.target.value)}>
+                <div onClick={(event:any) => setCategory(event.target.value)}>
                     <input type="radio" id="userChoice1" name="category" value="race"/>
                     <label htmlFor="userChoice1">Race</label>
 

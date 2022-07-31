@@ -1,5 +1,5 @@
-import { State } from "../types/state";
-import { ActionType, Actions } from '../types/action';
+import { State } from "../../types/state";
+import { ActionType, Actions } from '../../types/action';
 
 const initialState = {
     favourite: null,
