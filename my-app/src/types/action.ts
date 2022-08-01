@@ -13,7 +13,7 @@ export type AddToFavouriteAction = {
 
 
 export type SearchPayload = {
-    year: string | null,
+    year: string,
     category: string,
 }
 
