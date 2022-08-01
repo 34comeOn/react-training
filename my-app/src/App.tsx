@@ -10,13 +10,13 @@ import Search from "./components/search/search";
 import NotFound from "./components/not-found/not-found";
 
 function App(): JSX.Element {
-
+  
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Main />} />
         <Route path="/history" element={<History />} />
-        <Route path="/selected" element={<Selected />} />
+        <Route path="/favorites" element={<Selected />} />
         <Route path="/signup" element={<Registration />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/search" element={<Search />} />

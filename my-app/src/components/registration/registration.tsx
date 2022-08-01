@@ -16,9 +16,11 @@ export default function Registration (): JSX.Element {
             <h3>Registration</h3>
             <div>
                 <label htmlFor="userLogin">Enter your login</label>
-                <input type="text" id="userLogin" name="userLogin" onChange={(event) => setUserLogin(event.target.value)} value={userLogin}/>
+                <input type="text" id="userLogin" name="userLogin" 
+                onChange={(event) => setUserLogin(event.target.value)} value={userLogin}/>
                 <label htmlFor="userPassword">Enter your password</label>
-                <input type="password" id="userPassword" name="userPassword" onChange={(event) => setUserPassword(event.target.value)} value={userPassword}/>
+                <input type="password" id="userPassword" name="userPassword" 
+                onChange={(event) => setUserPassword(event.target.value)} value={userPassword}/>
             </div>
             <button onClick={() => dispatch(logIn())}>Register</button>
         </>        
