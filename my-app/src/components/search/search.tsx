@@ -3,15 +3,15 @@ import { dataAPI } from "../../utils/dataAPI";
 
 
 export default function Search (): JSX.Element {
-    const yearSearch = useAppSelector(state => state.search.search.year);
-    const categorySearch = useAppSelector(state => state.search.search.category);
+    const yearSearch = useAppSelector(state => state.first.search.year);
+    const categorySearch = useAppSelector(state => state.first.search.category);
 
 
     // const {cards, isLoading, error} = useAppSelector(state => state.cards)
 
     const {data: some, isLoading, error} = dataAPI.useFetchMyDataQuery(yearSearch);
 
-    console.log(some)
+    // console.log(some)
 
     return (
         <>

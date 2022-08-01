@@ -1,12 +1,12 @@
 export enum ActionType {
-    AddToFavourite = 'favourite/addCard',
+    LogIn = 'user/logIn',
     SearchStats = 'history/searchStats',
     OpenDetails = 'moreInfo/cardDetails'
 }
 
-export type AddToFavouriteAction = {
-    type: ActionType.AddToFavourite,
-    payload: number,
+export type LogInAction = {
+    type: ActionType.LogIn,
+    payload: boolean,
 };
 
 
@@ -25,4 +25,4 @@ export type SearchStatsAction = {
 
 
 
-export type Actions = AddToFavouriteAction | SearchStatsAction;
+export type Actions = LogInAction | SearchStatsAction;

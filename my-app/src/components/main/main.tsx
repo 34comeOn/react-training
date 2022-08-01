@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import { ActionType } from "../../types/action";
-import { useAppDispatch } from "../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 // import { getDataAsync } from "../../utils/dataAPI";
 
 export default function Main (): JSX.Element {
@@ -15,6 +15,9 @@ export default function Main (): JSX.Element {
         dispatch({type: ActionType.SearchStats, payload: {year: currentYear, category: currentCategory}})
         // dispatch(getDataAsync(searchPayload));
     }
+
+    const yearSearch = useAppSelector(state => state.first.search.year);
+    const categorySearch = useAppSelector(state => state.first.search.category);
 
     return (
         <>
@@ -40,7 +43,7 @@ export default function Main (): JSX.Element {
                     <label htmlFor="userChoice3">Team</label>
                 </div>
                 <div>
-                    <Link to="/search">
+                    <Link to={"/search?_year=" + yearSearch + ",_category=" + categorySearch}>
                         <button type="submit" onClick={() => {setGlobalSearchState()}}>Search</button>
                     </Link>
                 </div>

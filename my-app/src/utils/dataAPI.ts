@@ -31,9 +31,9 @@ export const dataAPI = createApi({
   baseQuery: fetchBaseQuery({baseUrl:'https://formula-18.p.rapidapi.com'}),
   endpoints: (build) => ({
     fetchMyData: build.query<Card[], string>({
-      query: (myyear: string) => ({
+      query: (myYear: string) => ({
         url: '/driverStanding',
-        params: {year: myyear},
+        params: {year: myYear},
         headers: {
           'X-RapidAPI-Key': '2f2d49651cmsh722c2e352245ab7p18b115jsn240c8d3c8935',
           'X-RapidAPI-Host': 'formula-18.p.rapidapi.com'

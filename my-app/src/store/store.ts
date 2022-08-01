@@ -1,13 +1,13 @@
 import { configureStore, ThunkAction, Action, combineReducers } from '@reduxjs/toolkit';
 
-import { myReducer } from './reducers/reducer';
-import {cardsReduser} from './reducers/cardsSlice';
+import { firstReducer } from './reducers/reducer';
+import { mainReduser } from './reducers/mainSlice';
 import { dataAPI } from '../utils/dataAPI';
 
 
 const rootReducer = combineReducers({
-  search: myReducer,
-  cards: cardsReduser,
+  first:firstReducer,
+  main: mainReduser,
   [dataAPI.reducerPath]: dataAPI.reducer
 })
 

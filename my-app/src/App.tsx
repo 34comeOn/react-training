@@ -18,7 +18,7 @@ function App(): JSX.Element {
         <Route path="/history" element={<History />} />
         <Route path="/selected" element={<Selected />} />
         <Route path="/signup" element={<Registration />} />
-        <Route path="/login" element={<SignIn />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/search" element={<Search />} />
         <Route path="*" element={<NotFound />} />
       </Route>
