@@ -1,18 +1,21 @@
 import { configureStore, ThunkAction, Action, combineReducers } from '@reduxjs/toolkit';
 
-import { myReducer } from './reducers/reducer';
-import {cardsReduser} from './reducers/cardsSlice';
+import { mainReduser } from './reducers/mainSlice';
+import { dataAPI } from '../utils/dataAPI';
 
 
 const rootReducer = combineReducers({
-  search: myReducer,
-  cards: cardsReduser,
+  main: mainReduser,
+  [dataAPI.reducerPath]: dataAPI.reducer
 })
 
 
 export const setupStore = () => {
   return configureStore( {
-    reducer: rootReducer
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => 
+      getDefaultMiddleware().concat(dataAPI.middleware)
+    
   })
 }
 

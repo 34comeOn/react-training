@@ -1,6 +1,11 @@
 import { Outlet, Link } from "react-router-dom";
 
+import { useAppDispatch } from "../../hooks/hooks";
+import { logOut } from "../../store/reducers/mainSlice";
+
 export default function Layout(): JSX.Element {
+  const dispatch = useAppDispatch();
+
   return (
     <>
       <header>
@@ -11,7 +16,7 @@ export default function Layout(): JSX.Element {
             <Link to="/history" title="/history">
                 History
             </Link>
-            <Link to="/selected" title="/selected">
+            <Link to="/favorites" title="/favorites">
                 Selected
             </Link>
             <Link to="/" title="/">
@@ -20,12 +25,12 @@ export default function Layout(): JSX.Element {
             <Link to="/signup" title="/signup">
                 Registration
             </Link>
-            <Link to="/login" title="/login">
+            <Link to="/signin" title="/signin">
                 Sign in
             </Link>
-            <a href="#">
-                Exit
-            </a>
+            <button onClick={() => dispatch(logOut())}>
+                Log out
+            </button>
         </nav>
       </header>
       <main style={{ paddingLeft: 30}} >
