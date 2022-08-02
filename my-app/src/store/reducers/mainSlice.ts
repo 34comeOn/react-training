@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-// import { getDataAsync } from "../../utils/dataAPI"
-
 
 type MainState = {
   userStatus: boolean,

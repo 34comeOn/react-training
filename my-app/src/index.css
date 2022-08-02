@@ -34,5 +34,5 @@ nav {
   min-width: 450px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }

@@ -1,36 +1,45 @@
 import { Outlet, Link } from "react-router-dom";
 
-import { useAppDispatch } from "../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { logOut } from "../../store/reducers/mainSlice";
 
 export default function Layout(): JSX.Element {
   const dispatch = useAppDispatch();
+  const {userStatus} = useAppSelector(state => state.main)
 
   return (
     <>
       <header>
         <Link to="/" title="/">
-            <h3>Logo place</h3>
+            <h3 style={{ color: "red"}}>F1 statistic</h3>
         </Link>
-        <nav>
-            <Link to="/history" title="/history">
-                History
-            </Link>
-            <Link to="/favorites" title="/favorites">
-                Selected
-            </Link>
+        <nav style={{marginLeft: "auto"}}>
+            {userStatus && 
+              <Link to="/history" title="/history">
+                  History
+              </Link>
+            }
+            {userStatus &&
+              <Link to="/favorites" title="/favorites">
+                 Selected
+              </Link>
+            }  
             <Link to="/" title="/">
                 Main
             </Link>
-            <Link to="/signup" title="/signup">
-                Registration
-            </Link>
-            <Link to="/signin" title="/signin">
-                Sign in
-            </Link>
-            <button onClick={() => dispatch(logOut())}>
+            {!userStatus && 
+              <Link to="/signup" title="/signup">
+                  Registration
+              </Link>
+            }
+            {!userStatus &&
+              <Link to="/signin" title="/signin">
+                  Sign in
+              </Link>
+            }
+            {userStatus && <button onClick={() => dispatch(logOut())}>
                 Log out
-            </button>
+            </button>}
         </nav>
       </header>
       <main style={{ paddingLeft: 30}} >
