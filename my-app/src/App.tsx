@@ -4,8 +4,8 @@ import Layout from "./components/layout/layout";
 import Main from "./components/main/main";
 import History from "./components/history/history";
 import Selected from "./components/selected/selected";
-import Registration from "./components/registration/registration";
-import SignIn from "./components/sign-in/sign-in";
+import Registration from "./components/logIn/registration/registration";
+import SignIn from "./components/logIn/sign-in/sign-in";
 import Search from "./components/search/search";
 import NotFound from "./components/not-found/not-found";
 
