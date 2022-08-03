@@ -5,7 +5,7 @@ import { logOut } from "../../store/reducers/mainSlice";
 
 export default function Layout(): JSX.Element {
   const dispatch = useAppDispatch();
-  const {userStatus} = useAppSelector(state => state.main)
+  const {userStatus, userLogin} = useAppSelector(state => state.main)
 
   return (
     <>
@@ -40,6 +40,7 @@ export default function Layout(): JSX.Element {
             {userStatus && <button onClick={() => dispatch(logOut())}>
                 Log out
             </button>}
+            {userStatus && <span style={{color: "white"}}>Account:<b>{userLogin}</b></span>}
         </nav>
       </header>
       <main style={{ paddingLeft: 30}} >

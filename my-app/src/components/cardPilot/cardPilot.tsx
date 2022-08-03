@@ -5,29 +5,29 @@ import { PilotCard } from "../../types/card";
 import FavouriteButton from "../buttons/favouriteButton/favouriteButton";
 import MoreInfoButton from "../buttons/moreInfoButton/moreInfoButton";
 
-export default function CardPilot (props: PilotCard): JSX.Element {
-    const {POS, PTS, Name, Country, Car} = props;
+export default function CardPilot ({pos, pts, name, country, car}: PilotCard): JSX.Element {
+    // const {pos, PTS, Name, Country, Car} = props;
 
     const {userStatus} = useAppSelector(state => state.main)
     
     return (
         <div>
-            <h3>Position: {POS}</h3>
+            <h3>Position: {pos}</h3>
             <ul style={{width:"200px", height:"100px", backgroundColor: "gold", 
                 marginBottom: "10px", listStyle: "none", padding: "15px"
                 }}>
 
                 <li>
-                    Pilot name: <b>{Name}</b>
+                    Pilot name: <b>{name}</b>
                 </li>
                 <li> 
-                    From: <b>{Country}</b>
+                    From: <b>{country}</b>
                 </li>
                 <li> 
-                    Bolid: <b>{Car}</b>
+                    Bolid: <b>{car}</b>
                 </li>
                 <li> 
-                    Points: <b>{PTS}</b>
+                    Points: <b>{pts}</b>
                 </li>
             </ul>
             <MoreInfoButton margin="38px" />
