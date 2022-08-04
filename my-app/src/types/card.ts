@@ -1,9 +1,9 @@
 export type PilotCard ={
-    Name: string,
-    POS: string,
-    Country: string,
-    Car: string,
-    PTS: string,
+    name: string,
+    pos: string,
+    country: string,
+    car: string,
+    pts: string,
 }
 
 export type RaceCard ={
