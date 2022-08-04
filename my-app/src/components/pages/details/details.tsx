@@ -1,9 +1,11 @@
-import { useAppSelector } from "../../../hooks/hooks";
+import { useAppSelector, useAppDispatch } from "../../../hooks/hooks";
+
+import { favouriteInfo } from "../../../store/reducers/mainSlice";
 
 import FavouriteButton from "../../buttons/favouriteButton/favouriteButton";
 
 export default function Details (): JSX.Element {
-
+    const dispatch = useAppDispatch();
     const {cardDetails, userStatus} = useAppSelector(state => state.main);
 
     return (
@@ -31,7 +33,15 @@ export default function Details (): JSX.Element {
                     Pilot`s total points: <b>{cardDetails?.pts}</b>
                 </li>
             </ul>
-            {userStatus && <FavouriteButton />}
+            {userStatus && <FavouriteButton onClick={() => dispatch(favouriteInfo({
+                    category: "pilots statistic",
+                    season: cardDetails?.season,
+                    pos: cardDetails?.pos,
+                    name: cardDetails?.name,
+                    country: cardDetails?.country,
+                    car: cardDetails?.car,
+                    pts: cardDetails?.pts,            
+                }))}/>}
         </>
 
     );

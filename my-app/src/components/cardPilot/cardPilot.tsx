@@ -1,7 +1,7 @@
 import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
 import { useSearchParams, Link } from "react-router-dom";
 
-import { detailInfo } from "../../store/reducers/mainSlice";
+import { detailInfo, favouriteInfo } from "../../store/reducers/mainSlice";
 
 import { PilotCard } from "../../types/card";
 
@@ -44,7 +44,15 @@ export default function CardPilot ({pos, pts, name, country, car}: PilotCard): J
                     pts,            
                 }))} />
             </Link>
-            {userStatus && <FavouriteButton />}
+            {userStatus && <FavouriteButton onClick={() => dispatch(favouriteInfo({
+                    category: "pilots statistic",
+                    season: searchParam.get("year"),
+                    pos,
+                    name,
+                    country,
+                    car,
+                    pts,            
+                }))}/>}
         </div>
     )
 }

@@ -1,5 +1,7 @@
-export default function FavouriteButton (): JSX.Element {
+import { FavouriteButtonTyping } from "../../../types/buttonTypings"
+
+export default function FavouriteButton ({onClick} :FavouriteButtonTyping): JSX.Element {
     return (
-        <button>Add to selected</button>
+        <button onClick={onClick}>Add to selected</button>
     )
 }

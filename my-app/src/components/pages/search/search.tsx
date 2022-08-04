@@ -16,7 +16,7 @@ export default function Search (): JSX.Element {
   
     return (
         <ErrorBoundary>            
-            <span>Choosen season:{searchParam.get("year")}</span><br/>
+            <span style={{marginTop: "20px", display: "block"}}>Choosen season:{searchParam.get("year")}</span><br/>
             <span style={{marginBottom: "20px", display: "block"}}>Choosen category:{searchParam.get("category")}</span>
             {isLoading && <h1>Идет загрузка...</h1>}
             {error && <h1>Download issue... </h1>}           

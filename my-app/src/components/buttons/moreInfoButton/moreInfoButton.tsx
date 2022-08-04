@@ -1,9 +1,6 @@
-type But = {
-    margin: string,
-    onClick: () => {},
-}
+import { MoreInfoButtonTyping } from "../../../types/buttonTypings"
 
-export default function MoreInfoButton ({margin, onClick} :But): JSX.Element {
+export default function MoreInfoButton ({margin, onClick} :MoreInfoButtonTyping): JSX.Element {
 
     return (
         <button style={{marginRight: margin}} onClick={onClick}>More info...</button>

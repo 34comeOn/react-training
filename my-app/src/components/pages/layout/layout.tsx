@@ -21,7 +21,7 @@ export default function Layout(): JSX.Element {
             }
             {userStatus &&
               <Link to="/favorites" title="/favorites">
-                 Selected
+                 Favourite
               </Link>
             }  
             <Link to="/" title="/">

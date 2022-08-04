@@ -7,12 +7,14 @@ type MainState = {
   userStatus: boolean,
   userLogin: string,
   cardDetails: CardDetailsTyping | null,
+  favouriteCards: [CardDetailsTyping | null],
 }
 
 const initialState: MainState = {
   userStatus: false,
   userLogin: 'unknown',
   cardDetails: null,
+  favouriteCards: [null],
 }
 
 export const mainSlice = createSlice({
@@ -28,10 +30,14 @@ export const mainSlice = createSlice({
     },
     detailInfo: (state, value) => {
       state.cardDetails = value.payload;
-    }
+    },
+    favouriteInfo: (state, value) => {
+      state.favouriteCards.push(value.payload);
+    },
+
   },
 })
 
-export const {logIn, logOut, detailInfo} = mainSlice.actions;
+export const {logIn, logOut, detailInfo,favouriteInfo} = mainSlice.actions;
 
 export const mainReduser = mainSlice.reducer;
