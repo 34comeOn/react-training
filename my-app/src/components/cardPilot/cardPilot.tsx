@@ -1,4 +1,7 @@
-import { useAppSelector } from "../../hooks/hooks";
+import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
+import { useSearchParams, Link } from "react-router-dom";
+
+import { detailInfo } from "../../store/reducers/mainSlice";
 
 import { PilotCard } from "../../types/card";
 
@@ -6,8 +9,8 @@ import FavouriteButton from "../buttons/favouriteButton/favouriteButton";
 import MoreInfoButton from "../buttons/moreInfoButton/moreInfoButton";
 
 export default function CardPilot ({pos, pts, name, country, car}: PilotCard): JSX.Element {
-    // const {pos, PTS, Name, Country, Car} = props;
-
+    let [searchParam]: any = useSearchParams();
+    const dispatch = useAppDispatch();
     const {userStatus} = useAppSelector(state => state.main)
     
     return (
@@ -30,7 +33,17 @@ export default function CardPilot ({pos, pts, name, country, car}: PilotCard): J
                     Points: <b>{pts}</b>
                 </li>
             </ul>
-            <MoreInfoButton margin="38px" />
+            <Link to="/details" title="/details">
+                <MoreInfoButton margin="38px" onClick={() => dispatch(detailInfo({
+                    category: "pilots statistic",
+                    season: searchParam.get("year"),
+                    pos,
+                    name,
+                    country,
+                    car,
+                    pts,            
+                }))} />
+            </Link>
             {userStatus && <FavouriteButton />}
         </div>
     )

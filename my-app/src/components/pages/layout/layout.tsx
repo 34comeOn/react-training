@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { logOut } from "../../store/reducers/mainSlice";
+import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
+import { logOut } from "../../../store/reducers/mainSlice";
 
 export default function Layout(): JSX.Element {
   const dispatch = useAppDispatch();
