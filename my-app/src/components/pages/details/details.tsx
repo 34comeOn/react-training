@@ -18,7 +18,7 @@ export default function Details (): JSX.Element {
                 <b style={{marginBottom: "30px", display: "block"}}> Season: {cardDetails?.season}</b>
                 </li>
                 <li>
-                    Pilot name: <b>{cardDetails?.name}</b>
+                    Pilot`s name: <b>{cardDetails?.name}</b>
                 </li>
                 <li> 
                     Pilot`s season result : <b>{cardDetails?.pos}</b>

@@ -1,9 +1,9 @@
 import { dataAPI } from "../../../utils/dataAPI";
 import { useSearchParams } from "react-router-dom";
 
-import ErrorBoundary from "../../errorBoundary/errorBoundary";
-import SearchPilot from "../../searchPilot/searchPilot";
-import SearchRace from "../../searchRace/searchRace";
+import ErrorBoundary from "../../../utils/errorBoundary/errorBoundary";
+import SearchPilot from "../../ui/searchPilot/searchPilot";
+import SearchRace from "../../ui/searchRace/searchRace";
 
 export default function Search (): JSX.Element { 
     

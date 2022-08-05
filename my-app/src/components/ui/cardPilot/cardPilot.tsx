@@ -1,12 +1,12 @@
-import { useAppSelector, useAppDispatch } from "../../hooks/hooks";
+import { useAppSelector, useAppDispatch } from "../../../hooks/hooks";
 import { useSearchParams, Link } from "react-router-dom";
 
-import { detailInfo, favouriteInfo } from "../../store/reducers/mainSlice";
+import { detailInfo, favouriteInfo } from "../../../store/reducers/mainSlice";
 
-import { PilotCard } from "../../types/card";
+import { PilotCard } from "../../../types/card";
 
-import FavouriteButton from "../buttons/favouriteButton/favouriteButton";
-import MoreInfoButton from "../buttons/moreInfoButton/moreInfoButton";
+import FavouriteButton from "../../buttons/favouriteButton/favouriteButton";
+import MoreInfoButton from "../../buttons/moreInfoButton/moreInfoButton";
 
 export default function CardPilot ({pos, pts, name, country, car}: PilotCard): JSX.Element {
     let [searchParam]: any = useSearchParams();

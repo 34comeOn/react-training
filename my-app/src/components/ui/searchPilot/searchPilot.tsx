@@ -1,4 +1,4 @@
-import { dataAPI } from "../../utils/dataAPI";
+import { dataAPI } from "../../../utils/dataAPI";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
