@@ -3,6 +3,8 @@ import { useState } from "react";
 
 import { useAppSelector } from "../../../hooks/hooks";
 
+import s from './main.module.css';
+
 export default function Main (): JSX.Element {
     const [currentYear, setYear] = useState('2019');
     const [currentCategory, setCategory] = useState('race');
@@ -39,7 +41,7 @@ export default function Main (): JSX.Element {
 
     return (
         <>
-            <p style={{marginTop: '50px', marginBottom: '50px'}}>Some text about 
+            <p className={s.info}>Some text about 
                 the Application</p>
             <form>
                 <label htmlFor="year" style={{marginRight: '10px'}}>Choose 
@@ -52,7 +54,7 @@ export default function Main (): JSX.Element {
                     <option value="2015">2015</option>
                 </select>
                 <p>Choose category:</p>
-                <div onClick={(event: any) => setCategory(event.target.value)}>
+                <div className={s.radioInput} onClick={(event: any) => setCategory(event.target.value)}>
                     <input type="radio" id="userChoice1" name="category" value="race"/>
                     <label htmlFor="userChoice1">Race</label>
 

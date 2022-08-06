@@ -1,5 +1,7 @@
 import { useAppSelector } from "../../../hooks/hooks";
 
+import s from './selected.module.css';
+
 export default function Selected (): JSX.Element {
 
     const {favouriteCards} = useAppSelector(state => state.main);
@@ -10,9 +12,7 @@ export default function Selected (): JSX.Element {
             {favouriteCards?.filter((card: any) => card !== null).map((card:any) => 
                     
                 
-                <ul style={{width:"400px", height:"300px", backgroundColor: "#36f833", 
-                marginBottom: "10px", listStyle: "none", padding: "15px", fontSize: "22px"
-                }}>
+                <ul className={s.selectedList}>
                     <li>
                     <b style={{marginBottom: "30px", display: "block"}}> Season: {card.season}</b>
                     </li>

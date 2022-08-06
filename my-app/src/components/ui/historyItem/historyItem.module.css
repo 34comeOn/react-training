@@ -1,0 +1,12 @@
+.historyItemList {
+    list-style: none; 
+    display: flex;
+    background-color: gold;
+    width: 680px;
+    margin-bottom: 20px; 
+    font-size: 22px;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
