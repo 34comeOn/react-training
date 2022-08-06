@@ -1,23 +1,6 @@
-import { dataAPI } from "../../utils/dataAPI";
+import { dataAPI } from "../../../utils/dataAPI";
 import { useSearchParams } from "react-router-dom";
 
-
-// import s from './searchRace.module.css';
-type RaceObj = {
-    raceName?: string,
-    season?: string,
-}
-type RaceCardType = {
-    post: [RaceObj],
-}
-
-// function RaceCard (props: RaceCardType): JSX.Element {
-//     const {raceName} = props;
-
-//     return (
-//         <li> {raceName}</li>
-//     )
-// }
 
 
 function RaceCard ({ post }: any )  {
@@ -42,10 +25,7 @@ export default function SearchRace (): JSX.Element {
         error} = dataAPI.useFetchRaceQuery(
         searchParam.get("year"));
     console.log(typeof posts)
-    
-
-
-
+ 
     let content
 
     if (isLoading) {
@@ -62,12 +42,5 @@ export default function SearchRace (): JSX.Element {
         {content}
       </section>
     )
-  
-    // const renderItems =  posts?.map((item, tempKey) => 
-    //     <RaceCard key={tempKey} raceName={item.raceName} />        
-    // );   
 
-    // return ( 
-    //     <ul className={s.raceWrapper}>{renderItems}</ul>
-    // )
 }

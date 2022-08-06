@@ -1,13 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/layout/layout";
+import Layout from "./components/pages/layout/layout";
 
-import Main from "./components/main/main";
-import History from "./components/history/history";
-import Selected from "./components/selected/selected";
+import Main from "./components/pages/main/main";
+import History from "./components/pages/history/history";
+import Selected from "./components/pages/selected/selected";
 import Registration from "./components/logIn/registration/registration";
-import SignIn from "./components/logIn/sign-in/sign-in";
-import Search from "./components/search/search";
-import NotFound from "./components/not-found/not-found";
+import SignIn from "./components/pages/sign-in/sign-in";
+import Search from "./components/pages/search/search";
+import NotFound from "./components/pages/not-found/not-found";
+import Details from "./components/pages/details/details";
 
 function App(): JSX.Element {
   
@@ -20,6 +21,7 @@ function App(): JSX.Element {
         <Route path="/signup" element={<Registration />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/details" element={<Details />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

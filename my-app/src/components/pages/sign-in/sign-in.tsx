@@ -1,4 +1,4 @@
-import UserInputBlock from "../userInputBlock/userInputBlock";
+import UserInputBlock from "../../logIn/userInputBlock/userInputBlock";
 
 
 export default function SignIn (): JSX.Element {

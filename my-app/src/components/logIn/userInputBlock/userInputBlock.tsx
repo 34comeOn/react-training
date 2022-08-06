@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { useAppDispatch } from "../../../hooks/hooks";
 import { logIn } from "../../../store/reducers/mainSlice";
 
@@ -19,12 +20,13 @@ export default function UserInputBlock ({buttonName}: UserInputBlockTyping): JSX
        if (localStorage.getItem(userLogin) === userPassword) {
         dispatch(logIn(userLogin));
        } else { 
-        alert("go away");
+        alert("login and password does not match");
        }
     }
     
     const [LoginState, setLoginState] = useState('');
     const [PasswordState, setPasswordState] = useState('');
+    
 
     const handleLoginChange = (state: string) => {
         setLoginState(state);
@@ -45,7 +47,6 @@ export default function UserInputBlock ({buttonName}: UserInputBlockTyping): JSX
                 onInputChange={handlePasswordChange} inputState={PasswordState}/>
             </div>
             <button onClick={() => {
-                // dispatch(logIn());
                 (buttonName === "Sign-in")? checkDataFromLocalStorage(LoginState, PasswordState) :
                 setUserDataToLocStorage(LoginState, PasswordState);
             }}>{buttonName}</button>
