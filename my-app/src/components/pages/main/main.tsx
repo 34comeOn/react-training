@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { useAppSelector } from "../../../hooks/hooks";
 
@@ -54,7 +54,7 @@ export default function Main (): JSX.Element {
                     <option value="2015">2015</option>
                 </select>
                 <p>Choose category:</p>
-                <div className={s.radioInput} onClick={(event: any) => setCategory(event.target.value)}>
+                <div className={s.radioInput} onChange={(event: React.ChangeEvent<HTMLInputElement>) => setCategory(event.target.value)} >
                     <input type="radio" id="userChoice1" name="category" value="race"/>
                     <label htmlFor="userChoice1">Race</label>
 

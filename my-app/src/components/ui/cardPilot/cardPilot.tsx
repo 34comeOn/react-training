@@ -9,7 +9,7 @@ import FavouriteButton from "../../buttons/favouriteButton/favouriteButton";
 import MoreInfoButton from "../../buttons/moreInfoButton/moreInfoButton";
 
 export default function CardPilot ({pos, pts, name, country, car}: PilotCardT): JSX.Element {
-    let [searchParam]: any = useSearchParams();
+    let [searchParam] = useSearchParams();
     const dispatch = useAppDispatch();
     const {userStatus} = useAppSelector(state => state.main)
     
