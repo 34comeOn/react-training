@@ -26,7 +26,7 @@ export default function SearchPilot (): JSX.Element {
             
             <div className={s.pilotsWrapper}> 
 
-                {posts?.filter((card: any) => card.Name.toLowerCase().includes(inputState.toLowerCase())).map((card:any) => 
+                {posts?.slice().filter((card: any) => card.Name.toLowerCase().includes(inputState.toLowerCase())).map((card:any) => 
                     <CardPilot key={card.POS} pos={card.POS} pts={card.PTS} name={card.Name} 
                     country={card.Country} car={card.Car}/>
                 )

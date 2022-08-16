@@ -8,7 +8,7 @@ export default function History (): JSX.Element {
 
     const {userLogin} = useAppSelector(state => state.main);
 
-    const history: HistoryTyping[] = JSON.parse(localStorage.getItem(`${userLogin}-history`));
+    const history: HistoryTyping[] = JSON.parse(localStorage.getItem(`${userLogin}-history`)  as string);
     
     return (
         <>

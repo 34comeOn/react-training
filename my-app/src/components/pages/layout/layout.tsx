@@ -3,6 +3,8 @@ import { Outlet, Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { logOut } from "../../../store/reducers/mainSlice";
 
+import logo from "../../../logo.png"
+
 export default function Layout(): JSX.Element {
   const dispatch = useAppDispatch();
   const {userStatus, userLogin} = useAppSelector(state => state.main)
@@ -11,7 +13,8 @@ export default function Layout(): JSX.Element {
     <>
       <header>
         <Link to="/" title="/">
-            <h3 style={{ color: "red"}}>F1 statistic</h3>
+            {/* <h3 style={{ color: "red"}}>F1 statistic</h3> */}
+            <img src={logo} alt="logo"  width={80} height={40}/>
         </Link>
         <nav style={{marginLeft: "auto"}}>
             {userStatus && 

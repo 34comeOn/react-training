@@ -25,7 +25,7 @@ export default function Main (): JSX.Element {
                 categoryInStorage: currentCategory}]));
            } else {
 
-            let arrayOfHistory = JSON.parse(localStorage.getItem(`${userLogin}-history`));
+            let arrayOfHistory = JSON.parse(localStorage.getItem(`${userLogin}-history`) as string);
 
             arrayOfHistory.push({
             searchDate: currentDate.toLocaleString(),
