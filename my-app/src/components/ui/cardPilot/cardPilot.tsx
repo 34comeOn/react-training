@@ -3,12 +3,12 @@ import { useSearchParams, Link } from "react-router-dom";
 
 import { detailInfo, favouriteInfo } from "../../../store/reducers/mainSlice";
 
-import { PilotCard } from "../../../types/card";
+import { PilotCardT } from "../../../types/card";
 
 import FavouriteButton from "../../buttons/favouriteButton/favouriteButton";
 import MoreInfoButton from "../../buttons/moreInfoButton/moreInfoButton";
 
-export default function CardPilot ({pos, pts, name, country, car}: PilotCard): JSX.Element {
+export default function CardPilot ({pos, pts, name, country, car}: PilotCardT): JSX.Element {
     let [searchParam]: any = useSearchParams();
     const dispatch = useAppDispatch();
     const {userStatus} = useAppSelector(state => state.main)

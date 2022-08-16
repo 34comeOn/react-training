@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
-import { RaceCard, PilotCard } from "../types/card";
+import { RaceCardT, PilotCardT } from "../types/card";
 
 export const dataAPI = createApi({
   reducerPath: 'dataAPI',
   baseQuery: fetchBaseQuery({baseUrl:'https://formula-18.p.rapidapi.com'}),
   endpoints: (build) => ({
-    fetchPilot: build.query<PilotCard[], string>({
+    fetchPilot: build.query<PilotCardT[], string>({
       query: (myYear) => ({
         url: '/driverStanding',
         params: {year: myYear},
@@ -15,7 +15,7 @@ export const dataAPI = createApi({
         }
       })
     }),
-    fetchRace: build.query<RaceCard[], string>({
+    fetchRace: build.query<RaceCardT[], string>({
       query: (myYear) => ({
         url: '/race',
         params: {year: myYear},
