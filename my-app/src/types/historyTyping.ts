@@ -1,4 +1,4 @@
-export type HistoryTyping= {
+export type HistoryTyping = {
     searchDate: string,
     yearInStorage: string, 
     categoryInStorage: string

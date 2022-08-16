@@ -9,7 +9,7 @@ import s from './searchPilot.module.css';
 
 export default function SearchPilot (): JSX.Element {
     const [inputState, setInputState] = useState('');
-    let [searchParam]: any = useSearchParams();
+    const [searchParam]: any = useSearchParams();
 
     const {data: posts} = dataAPI.useFetchPilotQuery(
     searchParam.get("year"));
