@@ -29,7 +29,7 @@ export default function SearchRace (): JSX.Element {
     let content
 
     if (isLoading) {
-      content = <h1>Loading...maFaca" </h1>
+      content = <h1>Loading..." </h1>
     } else if (isSuccess) {
       content = posts.map(post => <RaceCard post={post} />)
     } else if (isError) {

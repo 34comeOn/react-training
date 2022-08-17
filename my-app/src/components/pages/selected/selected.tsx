@@ -9,10 +9,10 @@ export default function Selected (): JSX.Element {
     return (
         <>
             <h2>Favourite</h2>
-            {favouriteCards?.filter((card: any) => card !== null).map((card:any) => 
+            {favouriteCards?.filter((card) => card !== null).map((card:any) => 
                     
                 
-                <ul className={s.selectedList}>
+                <ul className={s.selectedList}> 
                     <li>
                     <b style={{marginBottom: "30px", display: "block"}}> Season: {card.season}</b>
                     </li>
