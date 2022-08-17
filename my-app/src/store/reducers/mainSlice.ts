@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { CardDetailsTyping } from "../../types/cardDetailsTyping";
+import { CardDetailsTyping, CardDetailsUndefinedTyping } from "../../types/cardDetailsTyping";
 
 
 type MainState = {
   userStatus: boolean,
   userLogin: string,
   cardDetails: CardDetailsTyping | null,
-  favouriteCards: [CardDetailsTyping | null],
+  favouriteCards: [CardDetailsTyping | CardDetailsUndefinedTyping],
 }
 
 const initialState: MainState = {
   userStatus: false,
   userLogin: 'unknown',
   cardDetails: null,
-  favouriteCards: [null],
+  favouriteCards: [{}],
 }
 
 export const mainSlice = createSlice({
