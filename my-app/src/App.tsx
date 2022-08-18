@@ -11,7 +11,6 @@ import NotFound from "./components/pages/not-found/not-found";
 import Details from "./components/pages/details/details";
 
 function App(): JSX.Element {
-  
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

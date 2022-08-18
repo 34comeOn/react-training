@@ -4,15 +4,17 @@ import { useSearchParams } from "react-router-dom";
 
 import CardPilot from "../cardPilot/cardPilot";
 
+import { PilotCardT } from "../../../types/card"; 
+
 import s from './searchPilot.module.css';
 
 
 export default function SearchPilot (): JSX.Element {
     const [inputState, setInputState] = useState('');
-    const [searchParam]: any = useSearchParams();
+    const [searchParam] = useSearchParams();
 
     const {data: posts} = dataAPI.useFetchPilotQuery(
-    searchParam.get("year"));
+    searchParam.get("year") as string);
 
     return ( 
         <>
@@ -26,7 +28,7 @@ export default function SearchPilot (): JSX.Element {
             
             <div className={s.pilotsWrapper}> 
 
-                {posts?.slice().filter((card: any) => card.Name.toLowerCase().includes(inputState.toLowerCase())).map((card:any) => 
+                {posts?.slice().filter((card: PilotCardT) => card.Name.toLowerCase().includes(inputState.toLowerCase())).map((card) => 
                     <CardPilot key={card.POS} pos={card.POS} pts={card.PTS} name={card.Name} 
                     country={card.Country} car={card.Car}/>
                 )

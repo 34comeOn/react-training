@@ -9,10 +9,10 @@ export default function Selected (): JSX.Element {
     return (
         <>
             <h2>Favourite</h2>
-            {favouriteCards?.filter((card: any) => card !== null).map((card:any) => 
+            {favouriteCards?.map((card, index) => 
                     
                 
-                <ul className={s.selectedList}>
+              (index !== 0)?  <ul key={index} className={s.selectedList}> 
                     <li>
                     <b style={{marginBottom: "30px", display: "block"}}> Season: {card.season}</b>
                     </li>
@@ -31,7 +31,7 @@ export default function Selected (): JSX.Element {
                     <li> 
                         Pilot`s total points: <b>{card.pts}</b>
                     </li>
-                </ul>
+                </ul> : undefined
                 )
                 
             }

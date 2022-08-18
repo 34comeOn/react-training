@@ -7,12 +7,12 @@ import SearchRace from "../../ui/searchRace/searchRace";
 
 export default function Search (): JSX.Element { 
     
-    let [searchParam]: any = useSearchParams();
+    let [searchParam] = useSearchParams();
     
     let chosenCategory = searchParam.get("category");
 
     const { isLoading, error} = dataAPI.useFetchPilotQuery(
-        searchParam.get("year"));
+        searchParam.get("year") as string);
   
     return (
         <ErrorBoundary>            
